@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora INSS</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: #eee;
+}
+
+.box{
+    background: white;
+    width: 250px;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+input{
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+button{
+        background: #1900ff;
+        color: white;
+    margin-top: 10px;
+    padding: 8px;
+    width: 95%; 
+    border-radius: 10px; solid #1900ff;
+    border: 1px solid #1900ff;
+
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h3>SEU INSS 🫵</h3>
+
+    <input id="salario" type="number" placeholder="salário">
+
+    <button onclick="calcular ()">calcular</button>
+
+    <p id="res"></p>
+
+</div>
+
+<script>
+
+function calcular(){
+
+    let s = Number(document.getElementById("salario").value);
+    let inss = 0;
+
+    if(s <= 1621){
+        inss = s * 0.075;
+    }
+    else if(s <= 2902.84){
+        inss = (s - 1621) * 0.09 + 121.58;
+    }
+    else if(s <= 4354.27){
+        inss = (s - 2902.84) * 0.12 + 121.58 + 115.37;
+    }
+    else if(s <= 8475.55){
+        inss = (s - 4354.27) * 0.14 + 121.58 + 115.37 + 174.17;
+    }
+    else{
+        inss = 988.10;
+    }
+
+    document.getElementById("res").innerHTML =
+        "INSS: R$ " + inss.toFixed(2) +
+        "<br>Líquido: R$ " + (s - inss).toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
