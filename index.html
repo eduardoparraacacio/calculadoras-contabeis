@@ -38,6 +38,38 @@ button{
     border: 1px solid #1900ff;
 
 
+}body{
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: #eee;
+}
+
+.box{
+    background: white;
+    width: 250px;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+input{
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+button{
+        background: #1900ff;
+        color: white;
+    margin-top: 10px;
+    padding: 8px;
+    width: 95%; 
+    border-radius: 10px; solid #1900ff;
+    border: 1px solid #1900ff;
+
+
 }
 
 </style>
@@ -47,11 +79,11 @@ button{
 
 <div class="box">
 
-    <h3>SEU INSS 🫵</h3>
+    <h3>CALCULE SEU INSS 🫵</h3>
 
-    <input id="salario" type="number" placeholder="salário">
+    <input id="seu salario bruto" type="number" placeholder="seu salário bruto">
 
-    <button onclick="calcular ()">calcular</button>
+    <button onclick="CALCULAR ()">CALCULAR</button>
 
     <p id="res"></p>
 
@@ -59,9 +91,9 @@ button{
 
 <script>
 
-function calcular(){
+function CALCULAR(){
 
-    let s = Number(document.getElementById("salario").value);
+    let s = Number(document.getElementById("seu salario bruto").value);
     let inss = 0;
 
     if(s <= 1621){
