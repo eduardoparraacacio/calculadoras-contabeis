@@ -89,36 +89,6 @@ button{
 
 </div>
 
-<script>
-
-function CALCULAR(){
-
-    let s = Number(document.getElementById("seu salario bruto").value);
-    let inss = 0;
-
-    if(s <= 1621){
-        inss = s * 0.075;
-    }
-    else if(s <= 2902.84){
-        inss = (s - 1621) * 0.09 + 121.58;
-    }
-    else if(s <= 4354.27){
-        inss = (s - 2902.84) * 0.12 + 121.58 + 115.37;
-    }
-    else if(s <= 8475.55){
-        inss = (s - 4354.27) * 0.14 + 121.58 + 115.37 + 174.17;
-    }
-    else{
-        inss = 988.10;
-    }
-
-    document.getElementById("res").innerHTML =
-        "INSS: R$ " + inss.toFixed(2) +
-        "<br>Líquido: R$ " + (s - inss).toFixed(2);
-
-}
-
-</script>
 
 </body>
 </html>
